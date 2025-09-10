@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config/config';
 
 export const Register = () => {
     const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ export const Register = () => {
         return;
     }
     try {
-        await axios.post('http://localhost:3001/register', {
+        await axios.post(`${API_URL}/register`, {
             email,
             password
         });

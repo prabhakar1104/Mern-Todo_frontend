@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { API_URL } from '../config/config';
 
 export const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ export const ForgotPassword = () => {
             return;
         }
         try {
-            await axios.post('http://localhost:3001/forgot-password', { email });
+            await axios.post(`${API_URL}/forgot-password`, { email });
             toast.success('Please check your email for OTP');
             navigate('/reset-password', { state: { email } });
         } catch (err) {

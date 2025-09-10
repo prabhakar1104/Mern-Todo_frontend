@@ -17,7 +17,7 @@ export const VerifyEmail = () => {  // Changed from ForgotPassword to VerifyEmai
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3001/verify-email', {
+            await axios.post(`${API_URL}/verify-email`, {
                 email,
                 otp
             });
