@@ -10,6 +10,14 @@ export default defineConfig({
   },
     build: {
     outDir: 'dist',
-    sourcemap: false
+    sourcemap: false,
+    rollupOptions: {
+      external: ['axios'],
+      output: {
+        globals: {
+          axios: 'axios'
+        }
+      }
+    }
   }
 })
