@@ -1,1 +1,0 @@
-export const API_URL = 'https://mern-todo-backened-1.onrender.com';
